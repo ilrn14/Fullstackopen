@@ -1,10 +1,15 @@
 
 const Course = (props) => {
     const {course} = props;
+    const {parts} = course;
+    const total = parts.reduce((accumulator,currentValue) => accumulator + currentValue.exercises, 0)
     return (
      <div>
     <Header course={course} />
-    <Content parts={course.parts} ></Content>
+    <Content parts={parts} ></Content>
+    <div>
+        total of {total} exercises
+    </div>
      </div>  
     )
 }
