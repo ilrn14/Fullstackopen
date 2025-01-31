@@ -8,13 +8,13 @@ const Course = (props) => {
     <Header course={course} />
     <Content parts={parts} ></Content>
     <div>
-        total of {total} exercises
+       <strong> total of {total} exercises </strong>
     </div>
      </div>  
     )
 }
 
-const Header = ({ course }) => <h1>{course.name}</h1>
+const Header = ({ course }) => <h2>{course.name}</h2>
 
 const Content = ({ parts }) => {
     return parts.map(part => <Part key = {part.id} part = {part}></Part>)
@@ -25,5 +25,6 @@ const Part = ({ part }) => {
     {part.name} {part.exercises}
      </p>)
 }
+
 
 export default Course
